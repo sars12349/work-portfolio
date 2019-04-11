@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="device-width,initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/jason.css">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/jason.js"></script>	
+	<script src="js/ad.js"></script>
+	<script src="js/htc-ad-swipe.js"></script>
+
+	<script>
+		$( document ).on( "pagecreate", "#home", function() {
+		    $( document ).on( "swipeleft swiperight", "#home", function( e ) {
+		        if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+		            if ( e.type === "swipeleft" ) {
+		                $( "#rightpanel" ).panel( "open" );
+		            } else if ( e.type === "swiperight" ) {
+		                $( "#leftpanel" ).panel( "open" );
+		            }
+		        }
+		    });
+		});
+
+	</script>
+
+	<style>
+		.ptext{
+		color:#B81313;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		text-align: center;
+		}
+
+		.logotest{
+		width: 100px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		margin-right: auto;
+		margin-left: auto;
+		}
+	</style>
+	
+</head>
+<body>
+	<div data-role="page" id="home">
+		<div data-role="header">	
+
+		</div>
+
+		<div data-role="panel" id="leftpanel" data-display="overlay">
+			<div data-role="content">
+				<!-- 選單  -->
+				<ul data-role="listview" data-inset="true"> <!-- inset 表單內縮 -->
+					<li data-role="list-divider">主選單</li>
+					<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+					<li><a href="#product" data-icon="info" data-transition="slide" data-theme="b">New Product</a></li>
+					<li><a href="#about" data-icon="search" data-rel="dialog" data-transition="pop" data-theme="b">about</a></li>	
+				</ul>
+			</div>			
+		</div>
+		<!-- right panel -->
+		<div data-role="panel" id="rightpanel" data-position="right" data-display="reveal">
+			<div class="logotest">
+				<img src="image/htc.jpg" alt="" width="100%" class="logob_01">
+			</div>
+			<div class="ptext">
+				<h4>宏達電國際股份有限公司</h4>
+				<a href="tel:+886422528728"><h3>客服專線</h3></a>
+				<a href="mailto:htc@gmail.com"><h3>客服信箱</h3></a>
+			</div>
+
+			<div class="logo">	
+				<a href="#h03" data-rel="popup" data-position-to="window" id="ca">
+					<img src="image/Exodus.png" alt="" width="100%" class="logob_01" id="cimg">						
+				</a>				
+			</div>	
+			<div class="ptext">
+				<p id="cname">Htc Exodus</p>
+			</div>
+
+			
+		</div>
+
+		<div data="main" class="ui-content">
+			<div class="logo">
+				<img src="image/htc.jpg" alt="" width="100%" class="logob_01">
+			</div>
+
+			<div class="logob">
+				<img src="image/boss.jpg" class="logob_02" width="100px">
+			</div>
+		
+			
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<a href="https://www.htc.com/tw/"class="ui-btn">HTC</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="https://community.htc.com/tw/hero.php"class="ui-btn">Support</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	
+	<div data-role="page" id="product">
+			<div data-role="header" data-theme="b" >
+				<a href="#leftpanel2" data-icon="arrow-l" data-iconpos="notext" id="showprev">Back</a>
+				<h3>New Product</h3>
+				<a href="#rightpanel2" data-icon="arrow-r" data-iconpos="notext" id=shownext>Next</a>
+			</div>
+
+			<div data-role="panel" id="leftpanel2" data-display="overlay">
+			<div data-role="content">
+				<ul data-role="listview">
+					<li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+					<li><a href="#product" data-icon="info" data-transition="slide" data-theme="b">New Product</a></li>
+					<li><a href="#about" data-icon="search" data-rel="dialog" data-transition="pop" data-theme="b">about</a></li>	
+				</ul>
+			</div>			
+			</div>
+			<div data-role="panel" id="rightpanel2" data-position="right" data-display="reveal">
+				<div class="logotest">
+					<img src="image/htc.jpg" alt="" width="100px" class="logob_01">
+				</div>				
+				<div class="ptext">
+					<h4>宏達電國際股份有限公司</h4>
+					<a href="tel:+886422528728"><h3>客服專線</h3></a>
+					<a href="mailto:htc@gmail.com"><h3>客服信箱</h3></a>
+				</div>
+
+			</div>
+	
+			<div data="main" class="ui-content">			
+				<div class="logo">	
+					<a href="#h03" data-rel="popup" data-position-to="window" id="adsca">
+						
+						<img src="image/Exodus.png" alt="" width="100%" class="logob_01" id="adsimg">
+													
+					</a>				
+					<div data-role="popup" id="h03" data-dismissible="false">
+						<img src="image/Exodus.png" alt="" id="pimg2">
+					</div>
+				</div>	
+
+				<div class="ptext">
+					<p id="adsname">Htc Exodus</p>
+				</div>
+				
+			</div>
+	</div>	
+
+
+	<div data-role="page" id="about">
+			<div data-role="header" data-theme="b">
+				<h3>About</h3>
+			</div>
+	
+			<div data="main" class="ui-content">
+
+			<a href="#h01" data-rel="popup" data-position-to="window">
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder" width="30%" class="logob_02">
+			</a>
+			<div data-role="popup" id="h01" data-dismissible="false">
+				<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back">Close</a>
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder">
+			</div>
+
+			<a href="#h02" data-rel="popup" data-position-to="window">
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder" width="30%" class="logob_02">
+			</a>
+			<div data-role="popup" id="h02" data-dismissible="false">
+				<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back">Close</a>
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder">
+			</div>
+
+			<a href="#h03" data-rel="popup" data-position-to="window" >
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder" width="30%" class="logob_02">
+			</a>
+			<div data-role="popup" id="h03" data-dismissible="false">
+				<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back">Close</a>
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder">
+			</div>
+
+			<a href="#h04" data-rel="popup" data-position-to="window" >
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder" width="30%" class="logob_02">
+			</a>
+			<div data-role="popup" id="h04" data-dismissible="false">
+				<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back">Close</a>
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder">
+			</div>
+
+			<a href="#h04" data-rel="popup" data-position-to="window" >
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder" width="30%" class="logob_02">
+			</a>
+			<div data-role="popup" id="h04" data-dismissible="false">
+				<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back">Close</a>
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder">
+			</div>
+
+			<a href="#h04" data-rel="popup" data-position-to="window" >
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder" width="30%" class="logob_02">
+			</a>
+			<div data-role="popup" id="h04" data-dismissible="false">
+				<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back">Close</a>
+				<img src="http://fakeimg.pl/100x100/00CED1/FFF/?text=img+placeholder">
+			</div>
+
+			</div>
+	
+	</div>	
+
+</body>
+</html>
